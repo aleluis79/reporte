@@ -32,4 +32,11 @@ public class HomeController : ControllerBase
         return File(pdf, MediaTypeNames.Application.Pdf, "prueba.pdf");
     }
 
+    [HttpGet("generateV2")]
+    public IActionResult GenerateWithAsymmetricalMargins(string textoNumero = "E06000012828368") 
+    {
+        var pdf = _reporteService.GenerateWithAsymmetricalMargins(textoNumero);
+        return File(pdf, MediaTypeNames.Application.Pdf, "prueba.pdf");
+    }
+
 }
